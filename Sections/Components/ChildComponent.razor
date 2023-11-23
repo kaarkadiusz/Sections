@@ -5,6 +5,7 @@
     <button class="btn btn-primary" @onclick="IncrementCount">Inkrement</button>
     <div>
         ChildContent @Count
+        <SectionOutlet SectionName="child-content" />
     </div>
     <SectionContent SectionId="@ParentSectionId">
         <div>
@@ -12,15 +13,15 @@
         </div>
     </SectionContent>
 
-    <SectionContent SectionName="top-row-content">
+    @* <SectionContent SectionName="top-row-content">
         <div>
             ChildContent @Count
         </div>
-    </SectionContent>
+    </SectionContent> *@
 
     <SectionContent SectionId="Layout.MainLayout.TopRowContent">
         <div>
-            ChildContent @Count
+            ChildComponent
         </div>
     </SectionContent>
 
