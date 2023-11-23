@@ -1,0 +1,14 @@
+﻿<div class="main-container" style="border: 1px solid black; border-radius: 5px; padding: 1em;">
+    <ChildComponent ParentSectionId="ParentContent" />
+    <SectionOutlet SectionId="ParentContent" />
+</div>
+
+<style>
+    .main-container > div {
+        border: 2px solid red;
+    }
+</style>
+
+@code {
+    private SectionOutlet ParentContent = new();
+}

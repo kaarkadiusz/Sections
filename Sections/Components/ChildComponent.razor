@@ -1,0 +1,41 @@
+﻿@rendermode InteractiveServer
+
+<div style="border: 1px solid lightgray; border-radius: 5px; padding: 0.5em;">
+    <h3>ChildComponent</h3>
+    <button class="btn btn-primary" @onclick="IncrementCount">Inkrement</button>
+    <div>
+        ChildContent @Count
+    </div>
+    <SectionContent SectionId="@ParentSectionId">
+        <div>
+            ChildContent @Count
+        </div>
+    </SectionContent>
+
+    <SectionContent SectionName="top-row-content">
+        <div>
+            ChildContent @Count
+        </div>
+    </SectionContent>
+
+    <SectionContent SectionId="Layout.MainLayout.TopRowContent">
+        <div>
+            ChildContent @Count
+        </div>
+    </SectionContent>
+
+</div>
+
+@code {
+    [Parameter]
+    public SectionOutlet? ParentSectionId { get; set; }
+
+    private int Count = 0;
+
+    private async Task IncrementCount()
+    {
+        Count++;
+        await InvokeAsync(StateHasChanged);
+    }
+
+}
